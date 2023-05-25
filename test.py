@@ -1,13 +1,18 @@
 import cv2
 import cv2.aruco
 
+BLUE = (255, 0, 0)
+
 cap = cv2.VideoCapture(0)
 # care of https://stackoverflow.com/a/68790110
-# note that turning the resolution up adds *significant* delay!
+# note that turning the resolution up adds *significant* delay!... on windows. what?
 cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
 cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
 # lowering framerate does not seem to have any effect on this delay
 # cap.set(cv2.CAP_PROP_FPS, 15)
+# unsure if this is helping or if this is placebo effect.
+cap.set(cv2.CAP_PROP_EXPOSURE, -15)
+print(cap.get(cv2.CAP_PROP_EXPOSURE))
 
 arucoDict = cv2.aruco.getPredefinedDictionary(cv2.aruco.DICT_5X5_100)
 params = cv2.aruco.DetectorParameters()
@@ -28,10 +33,10 @@ def draw_markers(corners, ids, img):
             bottomRight = (int(bottomRight[0]), int(bottomRight[1]))
             bottomLeft = (int(bottomLeft[0]), int(bottomLeft[1]))
 
-            cv2.line(img, topLeft, topRight, (0, 255, 0), 2)
-            cv2.line(img, topRight, bottomRight, (0, 255, 0), 2)
-            cv2.line(img, bottomRight, bottomLeft, (0, 255, 0), 2)
-            cv2.line(img, bottomLeft, topLeft, (0, 255, 0), 2)
+            cv2.line(img, topLeft, topRight, BLUE, 4)
+            cv2.line(img, topRight, bottomRight, BLUE, 4)
+            cv2.line(img, bottomRight, bottomLeft, BLUE, 4)
+            cv2.line(img, bottomLeft, topLeft, BLUE, 4)
 
             # draw center
             c_x = int((topLeft[0] + bottomRight[0]) / 2.0)
