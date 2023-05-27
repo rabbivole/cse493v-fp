@@ -4,7 +4,7 @@ cam = cv2.VideoCapture(0)
 cam.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
 cam.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
 
-i = 0
+i = 12
 while True:
     ret, frame = cam.read()
     cv2.imshow('frame', frame)

@@ -11,8 +11,8 @@ cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
 # lowering framerate does not seem to have any effect on this delay
 # cap.set(cv2.CAP_PROP_FPS, 15)
 # unsure if this is helping or if this is placebo effect.
-cap.set(cv2.CAP_PROP_EXPOSURE, -15)
-print(cap.get(cv2.CAP_PROP_EXPOSURE))
+# seems like placebo because the property doesn't actually change.
+
 
 arucoDict = cv2.aruco.getPredefinedDictionary(cv2.aruco.DICT_5X5_100)
 params = cv2.aruco.DetectorParameters()
