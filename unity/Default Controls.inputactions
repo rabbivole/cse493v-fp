@@ -1,0 +1,34 @@
+{
+    "name": "Default Controls",
+    "maps": [
+        {
+            "name": "default",
+            "id": "71da128a-70e5-48d1-a8cf-ad90c0382ce6",
+            "actions": [
+                {
+                    "name": "reset",
+                    "type": "Button",
+                    "id": "7e02e9ee-1a78-42ae-9f86-4fa68af0087f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "fbdfd3a9-d831-4ac6-b64c-e516a93eafda",
+                    "path": "<OculusTouchController>{RightHand}/thumbstickClicked",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "reset",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

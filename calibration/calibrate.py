@@ -2,6 +2,10 @@ import cv2
 import numpy as np
 
 # https://www.youtube.com/watch?v=3h7wgR5fYik
+# wanted to do charuco calibration, looked at a billion tutorials, could not figure
+# out how to make it work after the overhaul they did.
+# all i have is a stackoverflow reply i came across from like 3 months ago: "The aruco library
+# is a complete mess right now and will continue to be a mess until somebody bothers to fix it."
 
 chessboardSize = (10,7)
 frameSize = (1280, 720)
@@ -20,7 +24,7 @@ for i in range(0, 23):
 
     ret, corners = cv2.findChessboardCorners(gray, chessboardSize)
 
-    if ret == True:
+    if ret:
         objPoints.append(objp)
         corners2 = cv2.cornerSubPix(gray, corners, (11,11), (-1,-1), criteria)
         imgPoints.append(corners)
